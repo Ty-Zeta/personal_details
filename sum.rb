@@ -1,4 +1,4 @@
-def sum(num1, num2, num3)
-  sum = num1 + num2 + num3
+def sum(favnum1, favnum2, favnum3)
+  sum = favnum1 + favnum2 + favnum3
   sum
 end
