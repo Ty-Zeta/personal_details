@@ -61,14 +61,32 @@ post '/food' do
   age = params[:user_age]
   hair = params[:user_hair]
   food = params[:user_food]
-  redirect '/get_drink?user_name=' + name + '&user_age=' + age + '&user_hair=' + hair + '&user_food=' + food
+  redirect '/drink?user_name=' + name + '&user_age=' + age + '&user_hair=' + hair + '&user_food=' + food
 end
+
+get '/drink' do
+  name = params[:user_name]
+  age = params[:user_age]
+  hair = params[:user_hair]
+  food = params[:user_food]
+  erb :get_drink, :locals => {:name => name, :age => age, :hair => hair, :food => food}
+end
+
+post '/drink' do
+  name = params[:user_name]
+  age = params[:user_age]
+  hair = params[:user_hair]
+  food = params[:user_food]
+  drink = params[:user_drink]
+  redirect '/three_numbers?user_name=' + name + '&user_age=' + age + '&user_hair=' + hair + '&user_food=' + food + '&user_drink' + drink
+end
+
 # get '/three_numbers' do
 #   age = params[:user_age]
 #   name = params[:user_name]
 #   erb :three_numbers, :locals => {:name => name, :age => age}
 # end
-
+#
 # post '/three_numbers' do
 #     name = params[:user_name]
 #     age = params[:user_age]
