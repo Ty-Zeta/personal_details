@@ -7,7 +7,8 @@ end
 
 post '/name' do
   name = params[:user_name]
-  redirect '/age?user_name=' + name
+  lname = params[:l_user_name]
+  redirect '/age?user_name=' + name + '&l_user_name' + lname
 end
 
 get '/age' do
@@ -18,7 +19,7 @@ end
 post '/age' do
   name = params[:user_name]
   age = params[:user_age]
-  redirect '/hair?user_name=' + name + '&user_age=' + age
+  redirect '/hair?user_name=' + name + '&l_user_name' + lname + '&user_age=' + age
 end
 
 get '/hair' do
@@ -31,7 +32,7 @@ post '/hair' do
   name = params[:user_name]
   age = params[:user_age]
   hair = params[:user_hair]
-  redirect '/eye?user_name=' + name + '&user_age=' + age + '&user_hair=' + hair
+  redirect '/eye?user_name=' + name + '&l_user_name' + lname + '&user_age=' + age + '&user_hair=' + hair
 end
 
 get '/eye' do
@@ -47,7 +48,7 @@ post '/eye' do
   hair = params[:user_hair]
   food = params[:user_food]
   eye = params[:user_eye]
-  redirect '/food?user_name=' + name + '&user_age=' + age + '&user_hair=' + hair + '&user_eye=' + eye
+  redirect '/food?user_name=' + name + '&l_user_name' + lname + '&user_age=' + age + '&user_hair=' + hair + '&user_eye=' + eye
 end
 
 get '/food' do
@@ -64,7 +65,7 @@ post '/food' do
   hair = params[:user_hair]
   eye = params[:user_eye]
   food = params[:user_food]
-  redirect '/drink?user_name=' + name + '&user_age=' + age + '&user_hair=' + hair + '&user_food=' + food + '&user_eye=' + eye
+  redirect '/drink?user_name=' + name + '&l_user_name' + lname + '&user_age=' + age + '&user_hair=' + hair + '&user_food=' + food + '&user_eye=' + eye
 end
 
 get '/drink' do
@@ -83,7 +84,7 @@ post '/drink' do
   eye = params[:user_eye]
   food = params[:user_food]
   drink = params[:user_drink]
-  redirect '/three_numbers?user_name=' + name + '&user_age=' + age + '&user_hair=' + hair + '&user_eye=' + eye + '&user_food=' + food + '&user_drink=' + drink
+  redirect '/three_numbers?user_name=' + name + '&l_user_name' + lname + '&user_age=' + age + '&user_hair=' + hair + '&user_eye=' + eye + '&user_food=' + food + '&user_drink=' + drink
 end
 
 get '/three_numbers' do
@@ -106,7 +107,7 @@ post '/three_numbers' do
     favnum1 = params[:user_number_1]
     favnum2 = params[:user_number_2]
     favnum3 = params[:user_number_3]
-    redirect '/total?user_name=' + name + '&user_age=' + age + '&user_hair=' + hair + '&user_eye=' + eye + '&user_food=' + food + '&user_drink=' + drink + '&user_number_1=' + favnum1 + '&user_number_2=' + favnum2 + '&user_number_3=' + favnum3
+    redirect '/total?user_name=' + name + '&l_user_name' + lname + '&user_age=' + age + '&user_hair=' + hair + '&user_eye=' + eye + '&user_food=' + food + '&user_drink=' + drink + '&user_number_1=' + favnum1 + '&user_number_2=' + favnum2 + '&user_number_3=' + favnum3
 end
 
 get '/total' do
@@ -138,5 +139,5 @@ end
 #     sum = add(favnum1, favnum2, favnum3)
 #     p sum
 #
-#     redirect '/final?user_name=' + name + '&user_age=' + age + '&user_hair=' + hair + '&user_eye=' + eye + '&user_food=' + food + '&user_drink' + drink + '&user_number_1=' + favnum1 + '&user_number_2=' + favnum2 + '&user_number_3=' + favnum3
+#     redirect '/final?user_name=' + name + '&l_user_name' + lname + '&user_age=' + age + '&user_hair=' + hair + '&user_eye=' + eye + '&user_food=' + food + '&user_drink' + drink + '&user_number_1=' + favnum1 + '&user_number_2=' + favnum2 + '&user_number_3=' + favnum3
 # end
