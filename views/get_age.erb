@@ -2,6 +2,7 @@ Hello, <%= name %>. How old are you?
 
 <form method = "post" action = "/age">
   <input type = "hidden" name = "user_name" value = <%= name %> >
+  <input type = "hidden" name = "l_user_name" value = <%= lname %> >
   <input type = "number" name = "user_age">
   <input type = "submit">
 </form>
