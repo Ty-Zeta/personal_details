@@ -1,7 +1,18 @@
 require 'sinatra'
 require_relative "sum.rb"
 
+# get '/' do
+#   erb :index
+# end
 get '/' do
+  erb :picture
+end
+
+post '/index' do
+  redirect '/index'
+end
+
+get '/index' do
   erb :index
 end
 
