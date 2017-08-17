@@ -1,15 +1,28 @@
 require 'sinatra'
+# this says this needs the sinatra gem to run
+
 require_relative "sum.rb"
+# this says this needs this ruby file later on to be called upon
 
 # get '/' do
 #   erb :index
 # end
+# normally I got with the index but I wanted a monty pyton motif and started witht the pic
+
 get '/' do
+  # get is asking for all the files from the previous page, but in this case there's none
+
   erb :picture
+  # erb takes me over to the erb file that I'm requesting
+
 end
 
 post '/index' do
+  # post takes information everything to the redirected pages, in this case there's none
+  
   redirect '/index'
+  # takes you to the next page with action index
+
 end
 
 get '/index' do
@@ -18,8 +31,12 @@ end
 
 post '/name' do
   name = params[:user_name]
+  # name variable is the paramater user_name, two different names to use so there's better clarification if I'm using value or id
+
   lname = params[:l_user_name]
   redirect '/age?user_name=' + name + '&l_user_name=' + lname
+  # redirecting to the action age while carrying the paramaters and variables to the other page
+
 end
 
 get '/age' do
@@ -142,27 +159,12 @@ get '/total' do
   food = params[:user_food]
   drink = params[:user_drink]
   favnum1 = params[:user_number_1].to_i
+  # change the paramater of the number to an interval so that it may be passed through the function and website
+
   favnum2 = params[:user_number_2].to_i
   favnum3 = params[:user_number_3].to_i
   sum = favnum1 + favnum2 + favnum3
+  # stating the function so that the app file knows where to draw from and use
 
   erb :total, :locals => {:name => name, :lname => lname, :age => age, :hair => hair, :eye => eye, :food => food, :drink => drink, :favnum1 => favnum1, :favnum2 => favnum2, :favnum3 => favnum3, :sum => sum}
 end
-
-# post '/total' do
-#     name = params[:user_name]
-#     lname = params[:l_user_name]
-#     age = params[:user_age]
-#     hair = params[:user_hair]
-#     eye = params[:user_eye]
-#     food = params[:user_food]
-#     drink = params[:user_drink]
-#     favnum1 = params[:user_number_1]
-#     favnum2 = params[:user_number_2]
-#     favnum3 = params[:user_number_3]
-#
-#     sum = add(favnum1, favnum2, favnum3)
-#     p sum
-#
-#     redirect '/final?user_name=' + name + '&l_user_name=' + lname + '&user_age=' + age + '&user_hair=' + hair + '&user_eye=' + eye + '&user_food=' + food + '&user_drink' + drink + '&user_number_1=' + favnum1 + '&user_number_2=' + favnum2 + '&user_number_3=' + favnum3
-# end
